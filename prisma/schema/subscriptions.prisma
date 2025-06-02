@@ -1,0 +1,11 @@
+model Subscription {
+  id                 Int       @id @default(autoincrement())
+  subscription_name  String
+  subscription_money Int
+  currency           String
+  payment_date       DateTime
+  period             Int
+  active             Boolean
+  category_id        Int
+  category           Category  @relation(fields: [category_id], references: [id])
+}

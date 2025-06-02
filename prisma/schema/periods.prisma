@@ -1,0 +1,11 @@
+model Period {
+  id           Int       @id @default(autoincrement())
+  limit        Decimal // moneyLimit
+  start_date   DateTime
+  end_date     DateTime
+  repeate_date Int
+  repeate_flag Boolean
+  category_id  Int
+  category     Category  @relation(fields: [category_id], references: [id])
+  payments     Payment[]
+}

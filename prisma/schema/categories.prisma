@@ -1,0 +1,12 @@
+model Category {
+  id            Int            @id @default(autoincrement())
+  category_name String
+  created_date  DateTime      @default(now())
+  updated_date  DateTime      @default(now())
+  notification  Boolean        
+  active        Boolean        @default(true)
+  user_id       Int
+  user          User           @relation(fields: [user_id], references: [id])
+  periods       Period[]
+  subscriptions Subscription[]
+}

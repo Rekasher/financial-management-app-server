@@ -1,0 +1,10 @@
+model Payment {
+  id              Int          @id @default(autoincrement())
+  payment_name    String
+  money           Decimal
+  payment_time    DateTime
+  created_date    DateTime
+  updated_date    DateTime
+  period_id       Int
+  period          Period       @relation(fields: [period_id], references: [id])
+}
